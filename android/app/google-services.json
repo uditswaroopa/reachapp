@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "677977990699",
+    "project_id": "reach-e6dde",
+    "storage_bucket": "reach-e6dde.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677977990699:android:ea2c84bd892b06bab26c6e",
+        "android_client_info": {
+          "package_name": "com.bluebirds.reach"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "677977990699-h7htatqflnc9mmjldkseoqdfcgven74d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bluebirds.reach",
+            "certificate_hash": "4cd05c9591781ac41bc310ebdcad77275a4d50d7"
+          }
+        },
+        {
+          "client_id": "677977990699-distb452uneieda2d3b81taa7a54vcoo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDNY3xq_WBrNWDO0_N6fg1kcKkbmQjNQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "677977990699-distb452uneieda2d3b81taa7a54vcoo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
