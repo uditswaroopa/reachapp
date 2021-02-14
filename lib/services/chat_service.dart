@@ -19,6 +19,7 @@ class ChatService {
     DocumentReference ref = await chatRef.add({
       'users': [recipient, user.uid],
     });
+    print("@test - ${ref.id}");
     await sendMessage(message, ref.id);
     return ref.id;
   }

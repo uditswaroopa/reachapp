@@ -35,6 +35,7 @@ class _SearchState extends State<Search> {
     List<DocumentSnapshot> doc = snap.docs;
     users = doc;
     filteredUsers = doc;
+    print("@test - $filteredUsers");
     setState(() {
       loading = false;
     });
@@ -99,6 +100,13 @@ class _SearchState extends State<Search> {
                 ],
                 textCapitalization: TextCapitalization.sentences,
                 onChanged: (query) {
+                  if (query == "") {
+                    searchController.clear();
+                    setState(() {
+                      filteredUsers.clear();
+                    });
+                  }
+                  print("@testing - $query");
                   search(query);
                 },
                 decoration: InputDecoration(
@@ -131,7 +139,7 @@ class _SearchState extends State<Search> {
           child: Text("No User Found",
               style: TextStyle(fontWeight: FontWeight.bold)),
         );
-      } else {
+      } else if (searchController.text != "") {
         return ListView.builder(
           itemCount: filteredUsers.length,
           itemBuilder: (BuildContext context, int index) {
@@ -160,7 +168,7 @@ class _SearchState extends State<Search> {
                   ),
                   trailing: GestureDetector(
                     onTap: () {
-                      Navigator.pop(context);
+                      // Navigator.pop(context);
                       Navigator.push(
                           context,
                           MaterialPageRoute(

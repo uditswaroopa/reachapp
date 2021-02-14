@@ -111,7 +111,7 @@ class _PostsState extends State<Posts> {
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (_) => Comments(post: widget.post),
+                        builder: (_) => Comments(post: widget.post ?? " "),
                       ),
                     );
                   },

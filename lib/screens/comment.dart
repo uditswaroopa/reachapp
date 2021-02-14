@@ -193,7 +193,7 @@ class _CommentsState extends State<Comments> {
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
       subtitle: Text(
-        widget.post.location,
+        widget.post.location ?? "",
       ),
     );
   }
