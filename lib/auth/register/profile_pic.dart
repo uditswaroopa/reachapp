@@ -1,6 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:provider/provider.dart';
 import 'package:social_media_app/components/custom_image.dart';
 import 'package:social_media_app/view_models/auth/posts_view_model.dart';
@@ -20,10 +19,7 @@ class _ProfilePictureState extends State<ProfilePicture> {
         viewModel.resetPost();
         return true;
       },
-      child: ModalProgressHUD(
-        progressIndicator: circularProgress(context),
-        inAsyncCall: viewModel.loading,
-        child: Scaffold(
+      child: Scaffold(
           key: viewModel.scaffoldKey,
           appBar: AppBar(
             title: Text('Add a profile picture'),
@@ -86,7 +82,6 @@ class _ProfilePictureState extends State<ProfilePicture> {
             ],
           ),
         ),
-      ),
     );
   }
 
@@ -114,7 +109,7 @@ class _ProfilePictureState extends State<ProfilePicture> {
               ),
               Divider(),
               ListTile(
-                leading: Icon(Feather.camera),
+                leading: Icon(CupertinoIcons.camera),
                 title: Text('Camera'),
                 onTap: () {
                   Navigator.pop(context);
@@ -122,7 +117,7 @@ class _ProfilePictureState extends State<ProfilePicture> {
                 },
               ),
               ListTile(
-                leading: Icon(Feather.image),
+                leading: Icon(CupertinoIcons.photo_on_rectangle),
                 title: Text('Gallery'),
                 onTap: () {
                   Navigator.pop(context);

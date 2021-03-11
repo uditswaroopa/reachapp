@@ -1,7 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:social_media_app/components/fab_container.dart';
 import 'package:social_media_app/pages/notification.dart';
 import 'package:social_media_app/pages/profile.dart';
@@ -33,7 +32,7 @@ class _TabScreenState extends State<TabScreen> {
     },
     {
       'title': 'unsee',
-      'icon': Feather.plus_circle,
+      'icon': CupertinoIcons.plus_circle,
       'page': Text('nes'),
       'index': 2,
     },
@@ -107,7 +106,7 @@ class _TabScreenState extends State<TabScreen> {
       // ignore: missing_required_param
       child: FabContainer(
         // page: Publication(),
-        icon: Feather.plus,
+        icon: CupertinoIcons.plus,
         mini: true,
       ),
     );

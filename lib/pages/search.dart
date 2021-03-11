@@ -5,7 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:social_media_app/chats/conversation.dart';
 import 'package:social_media_app/models/user.dart';
 import 'package:social_media_app/pages/profile.dart';
@@ -114,7 +113,7 @@ class _SearchState extends State<Search> {
                     onTap: () {
                       searchController.clear();
                     },
-                    child: Icon(Feather.x, size: 12.0, color: Colors.black),
+                    child: Icon(CupertinoIcons.xmark_circle, size: 12.0, color: Colors.black),
                   ),
                   contentPadding: EdgeInsets.only(bottom: 10.0, left: 10.0),
                   border: InputBorder.none,

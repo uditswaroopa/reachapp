@@ -39,13 +39,15 @@ class ConversationViewModel extends ChangeNotifier {
   }
 
   pickImage({int source, BuildContext context, String chatId}) async {
-    File image = source == 0
-        ? await ImagePicker.pickImage(
+    ImagePicker _picker = ImagePicker();
+    PickedFile temp = source == 0
+        ? await _picker.getImage(
             source: ImageSource.camera,
           )
-        : await ImagePicker.pickImage(
+        : await _picker.getImage(
             source: ImageSource.gallery,
           );
+    File image = File(temp.path);
 
     if (image != null) {
       File croppedFile = await ImageCropper.cropImage(

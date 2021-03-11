@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:provider/provider.dart';
 import 'package:social_media_app/components/text_form_builder.dart';
 import 'package:social_media_app/models/user.dart';
@@ -29,10 +27,7 @@ class _EditProfileState extends State<EditProfile> {
   @override
   Widget build(BuildContext context) {
     EditProfileViewModel viewModel = Provider.of<EditProfileViewModel>(context);
-    return ModalProgressHUD(
-      progressIndicator: circularProgress(context),
-      inAsyncCall: viewModel.loading,
-      child: Scaffold(
+    return Scaffold(
         key: viewModel.scaffoldKey,
         appBar: AppBar(
           centerTitle: true,
@@ -108,7 +103,6 @@ class _EditProfileState extends State<EditProfile> {
             buildForm(viewModel, context)
           ],
         ),
-      ),
     );
   }
 
@@ -125,7 +119,7 @@ class _EditProfileState extends State<EditProfile> {
             TextFormBuilder(
               enabled: !viewModel.loading,
               initialValue: widget.user.username,
-              prefix: Feather.user,
+              prefix: CupertinoIcons.person,
               hintText: "Username",
               textInputAction: TextInputAction.next,
               validateFunction: Validations.validateName,
@@ -137,7 +131,7 @@ class _EditProfileState extends State<EditProfile> {
             TextFormBuilder(
               initialValue: widget.user.country,
               enabled: !viewModel.loading,
-              prefix: Feather.map_pin,
+              prefix: CupertinoIcons.map_pin,
               hintText: "Country",
               textInputAction: TextInputAction.next,
               validateFunction: Validations.validateName,

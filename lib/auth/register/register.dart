@@ -1,6 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:provider/provider.dart';
 import 'package:social_media_app/auth/login/login.dart';
 import 'package:social_media_app/components/password_text_field.dart';
@@ -18,10 +17,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     RegisterViewModel viewModel = Provider.of<RegisterViewModel>(context);
-    return ModalProgressHUD(
-      progressIndicator: circularProgress(context),
-      inAsyncCall: viewModel.loading,
-      child: Scaffold(
+    return Scaffold(
         key: viewModel.scaffoldKey,
         body: ListView(
           padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
@@ -60,7 +56,6 @@ class _RegisterState extends State<Register> {
             ),
           ],
         ),
-      ),
     );
   }
 
@@ -72,7 +67,7 @@ class _RegisterState extends State<Register> {
         children: [
           TextFormBuilder(
             enabled: !viewModel.loading,
-            prefix: Feather.user,
+            prefix: CupertinoIcons.person_crop_circle,
             hintText: "Username",
             textInputAction: TextInputAction.next,
             validateFunction: Validations.validateName,
@@ -85,7 +80,7 @@ class _RegisterState extends State<Register> {
           SizedBox(height: 20.0),
           TextFormBuilder(
             enabled: !viewModel.loading,
-            prefix: Feather.mail,
+            prefix: CupertinoIcons.mail,
             hintText: "Email",
             textInputAction: TextInputAction.next,
             validateFunction: Validations.validateEmail,
@@ -98,7 +93,7 @@ class _RegisterState extends State<Register> {
           SizedBox(height: 20.0),
           TextFormBuilder(
             enabled: !viewModel.loading,
-            prefix: Feather.map_pin,
+            prefix: CupertinoIcons.map_pin,
             hintText: "Country",
             textInputAction: TextInputAction.next,
             validateFunction: Validations.validateName,
@@ -111,8 +106,8 @@ class _RegisterState extends State<Register> {
           SizedBox(height: 20.0),
           PasswordFormBuilder(
             enabled: !viewModel.loading,
-            prefix: Feather.lock,
-            suffix: Feather.eye,
+            prefix: CupertinoIcons.lock,
+            suffix: CupertinoIcons.eye,
             hintText: "Password",
             textInputAction: TextInputAction.next,
             validateFunction: Validations.validatePassword,
@@ -126,7 +121,7 @@ class _RegisterState extends State<Register> {
           SizedBox(height: 20.0),
           PasswordFormBuilder(
             enabled: !viewModel.loading,
-            prefix: Feather.lock,
+            prefix: CupertinoIcons.lock,
             hintText: "Confirm Password",
             textInputAction: TextInputAction.done,
             validateFunction: Validations.validatePassword,

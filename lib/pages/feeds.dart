@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:social_media_app/chats/recent_chats.dart';
 import 'package:social_media_app/components/stream_builder_wrapper.dart';
 import 'package:social_media_app/models/post.dart';
@@ -27,7 +26,7 @@ class _TimelineState extends State<Timeline> {
         centerTitle: false,
         actions: [
           IconButton(
-            icon: Icon(Feather.message_circle,
+            icon: Icon(CupertinoIcons.text_bubble,
                 size: 30.0, color: Theme.of(context).accentColor),
             onPressed: () {
               Navigator.push(

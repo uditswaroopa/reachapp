@@ -1,6 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:provider/provider.dart';
 import 'package:social_media_app/auth/register/register.dart';
 import 'package:social_media_app/components/password_text_field.dart';
@@ -20,10 +19,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     LoginViewModel viewModel = Provider.of<LoginViewModel>(context);
 
-    return ModalProgressHUD(
-      progressIndicator: circularProgress(context),
-      inAsyncCall: viewModel.loading,
-      child: Scaffold(
+    return  Scaffold(
         backgroundColor: Constants.lightBG,
         key: viewModel.scaffoldKey,
         body: ListView(
@@ -90,7 +86,6 @@ class _LoginState extends State<Login> {
             ),
           ],
         ),
-      ),
     );
   }
 
@@ -102,7 +97,7 @@ class _LoginState extends State<Login> {
         children: [
           TextFormBuilder(
             enabled: !viewModel.loading,
-            prefix: Feather.mail,
+            prefix: CupertinoIcons.mail,
             hintText: "Email",
             textInputAction: TextInputAction.next,
             validateFunction: Validations.validateEmail,
@@ -115,8 +110,8 @@ class _LoginState extends State<Login> {
           SizedBox(height: 15.0),
           PasswordFormBuilder(
             enabled: !viewModel.loading,
-            prefix: Feather.lock,
-            suffix: Feather.eye,
+            prefix: CupertinoIcons.lock,
+            suffix: CupertinoIcons.eye,
             hintText: "Password",
             textInputAction: TextInputAction.done,
             validateFunction: Validations.validatePassword,

@@ -1,5 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:social_media_app/components/custom_card.dart';
 
 class PasswordFormBuilder extends StatefulWidget {
@@ -101,7 +101,7 @@ class _PasswordFormBuilderState extends State<PasswordFormBuilder> {
                         setState(() => obscureText = !obscureText);
                       },
                       child: Icon(
-                        obscureText ? widget.suffix : Feather.eye_off,
+                        obscureText ? widget.suffix : CupertinoIcons.eye,
                         size: 15.0,
                       ),
                     ),

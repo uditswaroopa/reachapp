@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 import 'package:social_media_app/components/chat_bubble.dart';
 import 'package:social_media_app/models/enum/message_type.dart';
@@ -152,7 +151,7 @@ class _ConversationState extends State<Conversation> {
                         ),
                         IconButton(
                           icon: Icon(
-                            Feather.send,
+                            CupertinoIcons.arrow_right_circle,
                             color: Theme.of(context).accentColor,
                           ),
                           onPressed: () {

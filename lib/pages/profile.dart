@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:social_media_app/auth/register/register.dart';
 import 'package:social_media_app/components/stream_builder_wrapper.dart';
 import 'package:social_media_app/components/stream_grid_wrapper.dart';
@@ -77,7 +76,7 @@ class _ProfileState extends State<Profile> {
                       //   style: TextStyle(
                       //       fontWeight: FontWeight.w900, fontSize: 15.0),
                       // ),
-                      child: Icon(Feather.log_out),
+                      child: Icon(CupertinoIcons.fullscreen_exit),
                     ),
                   ),
                 )
@@ -488,7 +487,7 @@ class _ProfileState extends State<Profile> {
   buildIcons() {
     if (isToggle) {
       return IconButton(
-          icon: Icon(Feather.list),
+          icon: Icon(CupertinoIcons.list_bullet),
           onPressed: () {
             setState(() {
               isToggle = false;

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 import 'package:social_media_app/components/chat_item.dart';
 import 'package:social_media_app/models/message.dart';
@@ -23,7 +23,7 @@ class Chats extends StatelessWidget {
             child: GestureDetector(
               //Feature coming soon
               onTap: () {},
-              child: Icon(Feather.search),
+              child: Icon(CupertinoIcons.search),
             ),
           )
         ],

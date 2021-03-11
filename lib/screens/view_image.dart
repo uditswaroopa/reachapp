@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+ 
 import 'package:social_media_app/models/post.dart';
 import 'package:social_media_app/models/user.dart';
 import 'package:social_media_app/utils/firebase.dart';
@@ -43,7 +43,7 @@ class _ViewImageState extends State<ViewImage> {
           ),
           subtitle: Row(
             children: [
-              Icon(Feather.clock, size: 13.0),
+              Icon(CupertinoIcons.clock, size: 13.0),
               SizedBox(width: 3.0),
               Text(timeago.format(widget.post.timestamp.toDate())),
             ],
