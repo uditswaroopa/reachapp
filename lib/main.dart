@@ -8,7 +8,7 @@ import 'package:social_media_app/services/user_service.dart';
 import 'package:social_media_app/utils/config.dart';
 import 'package:social_media_app/utils/constants.dart';
 import 'package:social_media_app/utils/providers.dart';
-
+ 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Config.initFirebase();
