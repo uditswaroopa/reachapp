@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:social_media_app/chats/recent_chats.dart';
 import 'package:social_media_app/components/stream_builder_wrapper.dart';
 import 'package:social_media_app/models/post.dart';
 import 'package:social_media_app/utils/firebase.dart';
@@ -24,17 +23,6 @@ class _TimelineState extends State<Timeline> {
         automaticallyImplyLeading: false,
         title: Text('Reach'),
         centerTitle: false,
-        actions: [
-          IconButton(
-            icon: Icon(CupertinoIcons.text_bubble,
-                size: 30.0, color: Theme.of(context).accentColor),
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => Chats()));
-            },
-          ),
-          SizedBox(width: 20.0),
-        ],
       ),
       body: CustomScrollView(
         slivers: <Widget>[

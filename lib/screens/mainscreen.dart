@@ -102,10 +102,7 @@ class _TabScreenState extends State<TabScreen> {
     return Container(
       height: 40.0,
       width: 40.0,
-      // TODO REMOVE THAt a shit
-      // ignore: missing_required_param
       child: FabContainer(
-        // page: Publication(),
         icon: CupertinoIcons.plus,
         mini: true,
       ),

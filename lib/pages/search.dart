@@ -5,7 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:social_media_app/chats/conversation.dart';
 import 'package:social_media_app/models/user.dart';
 import 'package:social_media_app/pages/profile.dart';
 import 'package:social_media_app/utils/firebase.dart';
@@ -164,21 +163,6 @@ class _SearchState extends State<Search> {
                       style: TextStyle(fontWeight: FontWeight.bold)),
                   subtitle: Text(
                     user?.email,
-                  ),
-                  trailing: GestureDetector(
-                    onTap: () {
-                      // Navigator.pop(context);
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => Conversation(
-                              userId: doc.id,
-                              chatId: 'newChat',
-                            ),
-                          ));
-                    },
-                    child: Icon(CupertinoIcons.chat_bubble_fill,
-                        color: Theme.of(context).accentColor),
                   ),
                 ),
                 Divider(),

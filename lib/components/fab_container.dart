@@ -18,7 +18,7 @@ class FabContainer extends StatelessWidget {
       openBuilder: (BuildContext context, VoidCallback _) {
         return page;
       },
-      closedElevation: 4.0,
+      closedElevation: 2.0,
       closedShape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(56 / 2),
@@ -31,6 +31,7 @@ class FabContainer extends StatelessWidget {
           child: Icon(
             icon,
             color: Theme.of(context).accentColor,
+            size: 27,
           ),
           onPressed: () {
             chooseUpload(context);
@@ -45,51 +46,48 @@ class FabContainer extends StatelessWidget {
     return showModalBottomSheet(
       context: context,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(10),
+          topRight: Radius.circular(10),
+        ),
       ),
       builder: (BuildContext context) {
         return FractionallySizedBox(
-          heightFactor: .6,
+          heightFactor: .2,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 20.0),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: Center(
-                  child: Text(
-                    'SELECT',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).accentColor),
+              Container(
+                height: 10.0,
+                width: MediaQuery.of(context).size.width,
+              ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              //   child: Center(
+              //     child: Text(
+              //       'SELECT',
+              //       textAlign: TextAlign.center,
+              //       style: TextStyle(
+              //           fontWeight: FontWeight.bold,
+              //           color: Theme.of(context).accentColor),
+              //     ),
+              //   ),
+              // ),
+              Center(
+                child: ListTile(
+                  leading: Icon(
+                    CupertinoIcons.camera_on_rectangle,
+                    size: 25.0,
                   ),
-                ),
-              ),
-              Divider(),
-              ListTile(
-                leading: Icon(
-                  CupertinoIcons.chart_pie_fill,
-                  size: 25.0,
-                ),
-                title: Text('Post on status'),
-                onTap: () {
-                  ///Feature coming soon
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: Icon(
-                  CupertinoIcons.camera_on_rectangle,
-                  size: 25.0,
-                ),
-                title: Text('Make a Post'),
-                onTap: () {
-                  Navigator.pop(context);
+                  title: Text('Make a Post'),
+                  onTap: () {
+                    Navigator.pop(context);
 
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => CreatePost()));
-                },
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (_) => CreatePost()));
+                  },
+                ),
               ),
             ],
           ),
