@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "677977990699-r6svcutv49b5nelc9piq9enjstvr84p1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bluebirds.reach",
+            "certificate_hash": "f169260f38d5ab149611435feedb558864690546"
+          }
+        },
+        {
           "client_id": "677977990699-distb452uneieda2d3b81taa7a54vcoo.apps.googleusercontent.com",
           "client_type": 3
         }
